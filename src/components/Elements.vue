@@ -63,6 +63,7 @@
             renderPrizegiving,
         ],
         data: () => ({
+            templateId: '',
             elements: {},
             elementOrder: [],
             key: undefined,
@@ -100,7 +101,8 @@
                 if (data.name !== this.name) {
                     return;
                 }
-                Vue.set(this, 'elements', data.elements);
+                Vue.set(this, 'elements', data.elements.elements);
+                Vue.set(this, 'templateId', data.elements.id);
                 Vue.set(this, 'elementOrder', []);
 
 
@@ -167,7 +169,15 @@
 
             this.$eventHub.$on('partymeister-slides:download-definitions', (name) => {
                 if (name === this.name) {
-                    let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.elements));
+                    if (this.templateId === '') {
+                        this.templateId = Math.floor((Math.random() * 100000000) + 1);
+                    }
+                    let exportData = {
+                        id: this.templateId,
+                        elements: this.elements,
+                    };
+
+                    let data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData));
                     let button = document.querySelector('#download-definitions');
 
                     button.setAttribute("href", data);
@@ -189,8 +199,17 @@
                     }
                 });
 
+                if (this.templateId === '') {
+                    this.templateId = Math.floor((Math.random() * 100000000) + 1);
+                }
+
+                let definitions = JSON.stringify({
+                    id: this.templateId,
+                    elements: this.elements,
+                });
+
                 this.$eventHub.$emit('partymeister-slides:receive-definitions', {
-                    definitions: JSON.stringify(this.elements),
+                    definitions: definitions,
                     meta: JSON.stringify(meta),
                     name: this.name
                 });
@@ -296,8 +315,6 @@
             if (this.elementData) {
                 this.$eventHub.$emit('partymeister-slides:load-definitions', {name: this.name, elements: JSON.parse(JSON.stringify(this.elementData))})
                 this.showOverlay = true;
-                // let templateElement = document.querySelector("#" + this.name);
-                // templateElement.insertBefore(newItem, templateElement.childNodes[0]);
             }
 
             if (this.loadTemplate !== undefined) {

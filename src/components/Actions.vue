@@ -19,28 +19,53 @@
 </template>
 <script>
 
+    let toastr = require('toastr');
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "300",
+        "timeOut": "2000",
+        "extendedTimeOut": "0",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
     export default {
         name: 'partymeister-slides-actions',
         props: ['activeElement', 'simple'],
-        data: () => ({
-        }),
+        data: () => ({}),
         beforeDestroy() {
             this.$eventHub.$off();
         },
         mounted() {
             this.$eventHub.$on('partymeister-slides:receive-definitions', (data) => {
                 let templates = localStorage.getItem('templates');
+                templates = JSON.parse(templates);
+                let definitions = JSON.parse(data.definitions);
 
-                if (this.$route.params.template !== undefined && this.$route.params.template !== null) {
-                    templates = JSON.parse(templates);
-                    templates[this.$route.params.template] = JSON.parse(data.definitions);
+                // Check if this template already exists
+                let templateFound = false;
+                for (const [index, template] of templates.entries()) {
+                    if (template.id === definitions.id) {
+                        templateFound = index;
+                    }
+                }
+
+                if (templateFound !== false) {
+                    templates[templateFound] = JSON.parse(data.definitions);
                     localStorage.setItem('templates', JSON.stringify(templates));
-                    console.log("Template updated");
+                    toastr.success('Template updated', 'Partymeister');
                 } else {
-                    templates = JSON.parse(templates);
                     templates.push(JSON.parse(data.definitions));
                     localStorage.setItem('templates', JSON.stringify(templates));
-                    console.log("Template created");
+                    toastr.success('Template created', 'Partymeister');
                 }
             });
         },

@@ -49,6 +49,7 @@
     @import '~bootstrap';
     @import "~medium-editor/dist/css/medium-editor";
     @import "~medium-editor/dist/css/themes/beagle";
+    @import "~toastr/toastr";
 
     .header-row {
         height: 50px;

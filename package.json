@@ -9,7 +9,8 @@
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps"
+    "postuninstall": "electron-builder install-app-deps",
+    "electron:generate-icons": "electron-icon-builder --input=./public/assets/electron-logo.png --output=build --flatten"
   },
   "main": "background.js",
   "dependencies": {
@@ -18,6 +19,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "register-service-worker": "^1.6.2",
+    "toastr": "^2.1.4",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-color": "^2.7.0",
@@ -40,6 +42,7 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-typescript": "^4.0.0",
     "electron": "^6.0.0",
+    "electron-icon-builder": "^1.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",

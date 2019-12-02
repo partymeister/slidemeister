@@ -6,6 +6,7 @@ import store from './store'
 require('jquery');
 require('popper.js');
 require('bootstrap');
+
 Vue.config.productionTip = false
 
 const doubleRequestAnimationFrame = (callback:any) => {

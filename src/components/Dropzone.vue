@@ -17,20 +17,15 @@
             onDragLeave($event) {
                 this.zIndex = -1;
                 $event.preventDefault();
-                console.log('Drag leave!');
             },
             onDragEnter($event) {
                 this.zIndex = 10000;
                 $event.preventDefault();
-                console.log('Drag enter!');
             },
             onDragOver($event) {
                 $event.preventDefault();
-                console.log('Drag over!');
             },
             onDrop($event) {
-                console.log('DROP!');
-
                 this.zIndex = -1;
                 let file = null;
                 if ($event.dataTransfer.files.length > 0) {
@@ -40,7 +35,6 @@
                     let reader = new FileReader();
                     reader.readAsDataURL(file);
                     reader.onloadend = () => {
-                        console.log(reader.result);
                         this.$eventHub.$emit('partymeister-slides:image-dropped-from-dataurl', {
                             file: file,
                             dataUrl: reader.result
@@ -70,17 +64,6 @@
             // dropArea.addEventListener('dragleave', this.onDragLeave, false)
             dropArea.addEventListener('dragover', this.onDragOver, false)
             // dropArea.addEventListener('drop', this.onDrop, false)
-
-            this.$emit('drag-over');
-
-            this.$eventHub.$on('mediapool:drag:start', () => {
-                console.log("drag start");
-                this.zIndex = 10000;
-            });
-            this.$eventHub.$on('mediapool:drag:end', () => {
-                console.log("drag end");
-                // this.zIndex = -1;
-            });
         }
     }
 </script>

@@ -2,8 +2,9 @@
     <div class="row content">
         <div class="col-md-10">
             <div class="row">
-                <div v-for="(template, index) in templates" :key="index" class="col-md-4">
-                    <div class="template-wrapper" style="z-index: 12000; position: relative;" @mouseover="onMouseOver($event, index)"
+                <div v-for="(template, index) in templates" :key="template.id" class="col-md-4">
+                    <div class="template-wrapper" style="z-index: 12000; position: relative;"
+                         @mouseover="onMouseOver($event, index)"
                          @mouseout="onMouseOut($event, index)">
                         <partymeister-slides-elements class="slidemeister-template" :element-data="template"
                                                       :readonly="true" :id="'template-editor-'+index"
@@ -15,9 +16,11 @@
                             <button @click="exportTemplate($event, index)" type="button" class="btn btn-sm btn-primary">
                                 Export
                             </button>
-                            <button @click="editTemplate($event, index)" type="button" class="btn btn-sm btn-primary">Edit
+                            <button @click="editTemplate($event, index)" type="button" class="btn btn-sm btn-primary">
+                                Edit
                             </button>
-                            <button @click="deleteTemplate($event, index)" type="button" class="btn btn-sm btn-danger">Delete
+                            <button @click="deleteTemplate($event, index)" type="button" class="btn btn-sm btn-danger">
+                                Delete
                             </button>
                         </div>
                     </div>
@@ -28,7 +31,8 @@
             <div class="sidebar">
                 <h6>Data</h6>
                 <div>
-                    <button @click="createTemplate" class="btn btn-block btn-success btn-sm">Create new template</button>
+                    <button @click="createTemplate" class="btn btn-block btn-success btn-sm">Create new template
+                    </button>
                     <file-reader></file-reader>
                     <a id="download-definitions" style="display: none;" href="">Hidden download link</a>
                 </div>
@@ -43,6 +47,24 @@
     import PartymeisterSlidesElements from "@/components/Elements";
     import router from '../router'
 
+    let toastr = require('toastr');
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "300",
+        "timeOut": "2000",
+        "extendedTimeOut": "0",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
     export default {
         name: 'list',
         components: {FileReader, PartymeisterSlidesElements},
@@ -56,7 +78,15 @@
                 this.templates = templates;
             }
             this.$eventHub.$on('partymeister-slides:file-loaded', (data) => {
-                this.templates.push(JSON.parse(data));
+                let template = JSON.parse(data);
+                if (template.id === undefined) {
+                    template = {
+                        id: Math.floor((Math.random() * 100000000) + 1),
+                        elements: JSON.parse(data),
+                    };
+                }
+
+                this.templates.push(template);
                 localStorage.setItem('templates', JSON.stringify(this.templates));
             });
         },
@@ -79,6 +109,7 @@
                     this.templates.splice(index, 1);
                     localStorage.setItem('templates', JSON.stringify(this.templates));
                 }
+                toastr.success('Template deleted', 'Partymeister');
                 $event.preventDefault();
             },
             onMouseOver($event, index) {
@@ -94,6 +125,7 @@
     .template-wrapper {
         height: calc(540px * 0.3);
     }
+
     .content .row {
         margin: 20px;
     }
@@ -103,6 +135,7 @@
             border-radius: 0 !important;
             position: relative;
         }
+
         z-index: 10002;
         position: absolute;
         bottom: 0;
