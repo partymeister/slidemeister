@@ -16,14 +16,10 @@ export default {
                 clickTarget = clickTarget.parentElement;
             }
 
-            console.log(clickTarget.className);
-
             if (clickTarget.className === 'medium-editor-element') {
                 target = clickTarget;
             } else if (clickTarget.className.search('moveable') !== -1) {
                 target = event.target.querySelector('.medium-editor-element');
-            } else {
-                console.log(clickTarget);
             }
 
             let elementTarget = target.parentElement;
