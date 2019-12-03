@@ -106,6 +106,7 @@
                 if (data.name !== this.name) {
                     return;
                 }
+
                 Vue.set(this, 'elements', data.elements.elements);
                 Vue.set(this, 'templateId', data.elements.id);
                 Vue.set(this, 'templateType', data.elements.type);
@@ -312,17 +313,13 @@
             this.$eventHub.$on('partymeister-slides:add-element', (name) => {
                 this.addElement(name);
             });
-            this.$eventHub.$on('partymeister-slides:image-dropped', (image) => {
-                this.addElement('element_' + this.createElementName(), image);
+            this.$eventHub.$on('partymeister-slides:image-dropped', (data) => {
+                let elementName = this.addElement('element_' + this.createElementName(), data.src);
+                this.adjustImageElement(this.elements[elementName], data);
             });
             this.$eventHub.$on('partymeister-slides:image-dropped-from-dataurl', (data) => {
                 let elementName = this.addElement('element_' + this.createElementName(), '', data.dataUrl);
-
-                // adjust ratio
-                this.elements[elementName].properties.coordinates.width = 200 * data.ratio;
-                this.elements[elementName].properties.coordinates.heightwidth = 200 * data.ratio;
-                this.elements[elementName].properties.content = '';
-                this.updateElementProperties(this.elements[elementName]);
+                this.adjustImageElement(this.elements[elementName], data);
             });
 
             this.$eventHub.$on('partymeister-slides:update-id', (id) => {
@@ -483,6 +480,13 @@
                 // console.log('onWarp', transform);
                 target.style.transform = transform;
             },
+            adjustImageElement(element, data) {
+                // adjust ratio
+                element.properties.coordinates.width = 200 * data.ratio;
+                element.properties.coordinates.heightwidth = 200 * data.ratio;
+                element.properties.content = '';
+                this.updateElementProperties(element);
+            }
         }
     }
 </script>

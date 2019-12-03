@@ -1,10 +1,18 @@
 <template>
-    <div id="dropzone" :style="{'zIndex': zIndex}">
-        Drop it like it's hawt!
+    <div>
+        <div id="dropzone" :style="{'zIndex': zIndex}" class="d-none">
+            <div>
+                Drop it like it's hawt!
+            </div>
+            <draggable style="visibility: hidden;" v-model="droppedFiles" :options="{group:'files'}" @add="onAdd" class="draggable-container">
+            </draggable>
+        </div>
     </div>
 </template>
 
 <script>
+    import draggable from 'vuedraggable';
+
     export default {
         name: 'partymeister-slides-dropzone',
         data: function () {
@@ -15,13 +23,14 @@
                 interval: false,
             };
         },
-        components: {},
+        components: { draggable },
         methods: {
             onDragLeave($event) {
                 let elements = document.querySelectorAll('.medium-editor-element');
                 for (let element of elements) {
                     element.style.pointerEvents = 'auto';
                 }
+                document.querySelector('#dropzone').classList.add('d-none');
                 this.zIndex = -1;
                 if ($event !== undefined) {
                     $event.preventDefault();
@@ -39,6 +48,7 @@
                 for (let element of elements) {
                     element.style.pointerEvents = 'none';
                 }
+                document.querySelector('#dropzone').classList.remove('d-none');
                 $event.preventDefault();
             },
             onDrop($event) {
@@ -67,7 +77,16 @@
                 $event.preventDefault();
             },
             onAdd: function (event) {
-                this.$eventHub.$emit('partymeister-slides:image-dropped', this.droppedFiles[event.newIndex].file.file_original_relative);
+                let image = new Image();
+                image.onload = () => {
+                    this.$eventHub.$emit('partymeister-slides:image-dropped', {
+                        src: this.droppedFiles[event.newIndex].file.file_original_relative,
+                        width: image.naturalWidth,
+                        height: image.naturalHeight,
+                        ratio: image.naturalWidth / image.naturalHeight,
+                    });
+                };
+                image.src = this.droppedFiles[event.newIndex].file.file_original_relative;
             },
             isImage: function (file) {
                 if (file.file.mime_type == 'image/png' || file.file.mime_type == 'image/jpg' || file.file.mime_type == 'image/jpeg' || file.file.mime_type == 'video/mp4') {
@@ -97,18 +116,27 @@
     }
 </script>
 <style lang="scss">
-    #dropzone {
+    #dropzone div {
         display: flex;
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        background: white;
-        opacity: 0.9;
-        z-index: 13000;
+        text-align: center;
         align-items: center;
         justify-content: center;
         font-weight: bold;
         font-size: 50px;
         color: #333;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    #dropzone {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: 0.9;
+        z-index: 13000;
     }
 </style>

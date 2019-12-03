@@ -61,41 +61,43 @@
             this.$eventHub.$off();
         },
         mounted() {
-            this.$eventHub.$on('partymeister-slides:all-elements', (data) => {
-                this.templateId = data.id;
-                this.templateType = data.type;
-            });
-            this.$eventHub.$on('partymeister-slides:receive-definitions', (data) => {
-                let templates = localStorage.getItem('templates');
-                templates = JSON.parse(templates);
-                let definitions = JSON.parse(data.definitions);
+            if (this.standalone) {
+                this.$eventHub.$on('partymeister-slides:all-elements', (data) => {
+                    this.templateId = data.id;
+                    this.templateType = data.type;
+                });
+                this.$eventHub.$on('partymeister-slides:receive-definitions', (data) => {
+                    let templates = localStorage.getItem('templates');
+                    templates = JSON.parse(templates);
+                    let definitions = JSON.parse(data.definitions);
 
-                // Check if this template already exists
-                let templateFound = false;
-                for (const [index, template] of templates.entries()) {
-                    if (template.id === definitions.id) {
-                        templateFound = index;
+                    // Check if this template already exists
+                    let templateFound = false;
+                    for (const [index, template] of templates.entries()) {
+                        if (template.id === definitions.id) {
+                            templateFound = index;
+                        }
                     }
-                }
 
-                if (this.$route !== undefined && (this.$route.params.template !== undefined && this.$route.params.template !== null)) {
-                    templates[this.$route.params.template] = JSON.parse(data.definitions);
-                    localStorage.setItem('templates', JSON.stringify(templates));
-                    this.toast('Template updated');
-                } else if (templateFound !== false) {
-                    templates[templateFound] = JSON.parse(data.definitions);
-                    localStorage.setItem('templates', JSON.stringify(templates));
-                    this.toast('Template updated');
-                    // Redirect to new template
-                    this.$router.push({name: 'edit', params: {template: templateFound}})
-                } else {
-                    templates.push(JSON.parse(data.definitions));
-                    localStorage.setItem('templates', JSON.stringify(templates));
-                    this.toast('Template created');
-                    // Redirect to new template
-                    this.$router.push({name: 'edit', params: {template: templates.length - 1}})
-                }
-            });
+                    if (this.$route !== undefined && (this.$route.params.template !== undefined && this.$route.params.template !== null)) {
+                        templates[this.$route.params.template] = JSON.parse(data.definitions);
+                        localStorage.setItem('templates', JSON.stringify(templates));
+                        this.toast('Template updated');
+                    } else if (templateFound !== false) {
+                        templates[templateFound] = JSON.parse(data.definitions);
+                        localStorage.setItem('templates', JSON.stringify(templates));
+                        this.toast('Template updated');
+                        // Redirect to new template
+                        this.$router.push({name: 'edit', params: {template: templateFound}})
+                    } else {
+                        templates.push(JSON.parse(data.definitions));
+                        localStorage.setItem('templates', JSON.stringify(templates));
+                        this.toast('Template created');
+                        // Redirect to new template
+                        this.$router.push({name: 'edit', params: {template: templates.length - 1}})
+                    }
+                });
+            }
         },
         methods: {
             updateId() {
