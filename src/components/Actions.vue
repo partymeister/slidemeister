@@ -3,7 +3,6 @@
         <div class="form-group"><label for="name" class="control-label required">Name</label>
             <input required="required"
                    @keyup="updateId"
-                   name="name"
                    type="text"
                    id="name"
                    v-model="templateId"
@@ -12,7 +11,7 @@
         <div class="form-group"><label for="template_for" class="control-label">Template for</label>
             <select v-model="templateType"
                     @change="updateType"
-                    id="template_for" name="template_for" class="form-control">
+                    id="template_for" class="form-control">
                 <option value="basic">Basic template</option>
                 <option value="coming_up">Coming up</option>
                 <option value="now">Now</option>
@@ -23,48 +22,33 @@
                 <option value="participants">Participants</option>
                 <option value="prizegiving">Prizegiving</option>
                 <option value="comments">Competition comments</option>
-            </select></div>
+            </select>
+        </div>
         <div>
             <button @click="saveTemplate" class="btn btn-block btn-success btn-sm">Save</button>
         </div>
         <hr>
-        <h6>Actions</h6>
-        <div>
-            <button @click="addElement" class="btn btn-block btn-success btn-sm">Add</button>
+        <h6>Layers</h6>
+        <div class="btn-group btn-block" role="group" aria-label="Basic example">
+            <button @click="addElement" class="btn btn-success btn-sm">Add</button>
             <button :disabled="activeElement === undefined" @click="cloneElement"
-                    class="btn btn-block btn-warning btn-sm">Clone
+                    class="btn btn-warning btn-sm">Clone
             </button>
             <button :disabled="activeElement === undefined" @click="deleteElement"
-                    class="btn btn-block btn-danger btn-sm">Delete
+                    class="btn btn-danger btn-sm">Delete
             </button>
         </div>
     </div>
 </template>
 <script>
 
-    import router from "@/router";
+    import elementNameHelper from "@/mixins/elementNameHelper";
+    import toast from "@/mixins/toast";
 
-    let toastr = require('toastr');
-    toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-bottom-center",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "300",
-        "timeOut": "2000",
-        "extendedTimeOut": "0",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    }
     export default {
         name: 'partymeister-slides-actions',
         props: ['activeElement', 'simple'],
+        mixins: [elementNameHelper, toast],
         data: () => ({
             templateId: '',
             templateType: 'basic'
@@ -93,19 +77,19 @@
                 if (this.$route !== undefined && (this.$route.params.template !== undefined && this.$route.params.template !== null)) {
                     templates[this.$route.params.template] = JSON.parse(data.definitions);
                     localStorage.setItem('templates', JSON.stringify(templates));
-                    toastr.success('Template updated', 'Partymeister');
-                } else  if (templateFound !== false) {
+                    this.toast('Template updated');
+                } else if (templateFound !== false) {
                     templates[templateFound] = JSON.parse(data.definitions);
                     localStorage.setItem('templates', JSON.stringify(templates));
-                    toastr.success('Template updated', 'Partymeister');
+                    this.toast('Template updated');
                     // Redirect to new template
-                    router.push({name: 'edit', params: {template: templateFound}})
+                    this.$router.push({name: 'edit', params: {template: templateFound}})
                 } else {
                     templates.push(JSON.parse(data.definitions));
                     localStorage.setItem('templates', JSON.stringify(templates));
-                    toastr.success('Template created', 'Partymeister');
+                    this.toast('Template created');
                     // Redirect to new template
-                    router.push({name: 'edit', params: {template: templates.length - 1}})
+                    this.$router.push({name: 'edit', params: {template: templates.length - 1}})
                 }
             });
         },
@@ -120,11 +104,11 @@
                 this.$eventHub.$emit('partymeister-slides:request-definitions', 'template-editor');
             },
             addElement() {
-                const uniqid = 'element_' + Math.floor((Math.random() * 100000000) + 1);
+                const uniqid = 'element_' + this.createElementName();
                 this.$eventHub.$emit('partymeister-slides:add-element', uniqid);
             },
             cloneElement() {
-                const uniqid = 'element_' + Math.floor((Math.random() * 100000000) + 1);
+                const uniqid = 'element_' + this.createElementName();
                 this.$eventHub.$emit('partymeister-slides:clone-element', {
                     uniqid: uniqid,
                     name: this.activeElement.name
@@ -132,7 +116,6 @@
             },
             deleteElement() {
                 this.$eventHub.$emit('partymeister-slides:delete-element', this.activeElement.name);
-
             }
         }
     }

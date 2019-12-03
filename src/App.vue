@@ -17,15 +17,13 @@
     </div>
 </template>
 <script>
-    import router from "@/router";
-
     export default {
         data: () => ({
             canGoBack: false,
         }),
         watch:{
             $route (to, from){
-                if (router.currentRoute.name === 'list') {
+                if (this.$router.currentRoute.name === 'list') {
                     this.canGoBack = false;
                 } else {
                     this.canGoBack = true;
@@ -33,7 +31,7 @@
             }
         },
         mounted() {
-            if (router.currentRoute.name === 'list') {
+            if (this.$router.currentRoute.name === 'list') {
                 this.canGoBack = false;
             } else {
                 this.canGoBack = true;
@@ -41,7 +39,7 @@
         },
         methods: {
             navigateToList() {
-                router.push({name: 'list'})
+                this.$router.push({name: 'list'})
             }
         }
     }

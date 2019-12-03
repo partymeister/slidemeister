@@ -51,7 +51,6 @@
 <script>
     import FileReader from "@/components/FileReader";
     import PartymeisterSlidesElements from "@/components/Elements";
-    import router from '../router'
 
     let toastr = require('toastr');
     toastr.options = {
@@ -83,10 +82,14 @@
     import * as timetable from '../assets/default-templates/timetable.json';
     import * as entry1 from '../assets/default-templates/competition_entry-1.json';
     import * as entry2n from '../assets/default-templates/competition_entry-2-n.json';
+    import toast from "@/mixins/toast";
 
     export default {
         name: 'list',
         components: {FileReader, PartymeisterSlidesElements},
+        mixins: [
+            toast
+        ],
         data: () => ({
             templates: [],
         }),
@@ -112,13 +115,6 @@
             }
             this.$eventHub.$on('partymeister-slides:file-loaded', (data) => {
                 let template = JSON.parse(data);
-                if (template.id === undefined) {
-                    template = {
-                        id: Math.floor((Math.random() * 100000000) + 1),
-                        elements: JSON.parse(data),
-                    };
-                }
-
                 this.templates.push(template);
                 localStorage.setItem('templates', JSON.stringify(this.templates));
             });
@@ -129,10 +125,10 @@
                 $event.preventDefault();
             },
             createTemplate($event) {
-                router.push({name: 'create'})
+                this.$router.push({name: 'create'})
             },
             editTemplate($event, index) {
-                router.push({name: 'edit', params: {template: index}})
+                this.$router.push({name: 'edit', params: {template: index}})
 
                 $event.preventDefault();
             },
@@ -142,7 +138,7 @@
                     this.templates.splice(index, 1);
                     localStorage.setItem('templates', JSON.stringify(this.templates));
                 }
-                toastr.success('Template deleted', 'Partymeister');
+                this.toast('Template deleted');
                 $event.preventDefault();
             },
             onMouseOver($event, index) {

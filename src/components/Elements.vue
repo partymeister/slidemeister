@@ -44,6 +44,7 @@
     import renderPrizegiving from "../mixins/renderPrizegiving";
     import renderHelper from "../mixins/renderHelper";
     import Vue from 'vue';
+    import elementNameHelper from "@/mixins/elementNameHelper";
 
     let slugify = require('slugify');
 
@@ -63,6 +64,7 @@
             renderTimetable,
             renderCompetition,
             renderPrizegiving,
+            elementNameHelper,
         ],
         data: () => ({
             templateId: '',
@@ -174,7 +176,7 @@
             this.$eventHub.$on('partymeister-slides:download-definitions', (name) => {
                 if (name === this.name) {
                     if (this.templateId === '') {
-                        this.templateId = Math.floor((Math.random() * 100000000) + 1);
+                        this.templateId = this.createElementName();
                     }
                     let exportData = {
                         id: this.templateId,
@@ -204,7 +206,7 @@
                 });
 
                 if (this.templateId === '') {
-                    this.templateId = Math.floor((Math.random() * 100000000) + 1);
+                    this.templateId = this.createElementName();
                 }
 
                 let definitions = JSON.stringify({
@@ -293,7 +295,7 @@
              */
             this.$eventHub.$on('partymeister-slides:clone-element', (data) => {
                 this.addStepToUndoStack();
-                let element = this.cloneElement(data, Math.floor((Math.random() * 100000000) + 1));
+                let element = this.cloneElement(data, this.createElementName());
 
                 Vue.set(this.elements, element.name, element);
                 this.$forceNextTick(() => {
@@ -311,10 +313,10 @@
                 this.addElement(name);
             });
             this.$eventHub.$on('partymeister-slides:image-dropped', (image) => {
-                this.addElement('element_' + Math.floor((Math.random() * 100000000) + 1), image);
+                this.addElement('element_' + this.createElementName(), image);
             });
             this.$eventHub.$on('partymeister-slides:image-dropped-from-dataurl', (data) => {
-                this.addElement('element_' + Math.floor((Math.random() * 100000000) + 1), '', data.dataUrl);
+                this.addElement('element_' + this.createElementName(), '', data.dataUrl);
             });
 
             this.$eventHub.$on('partymeister-slides:update-id', (id) => {
