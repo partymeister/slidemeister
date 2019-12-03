@@ -1,53 +1,57 @@
 <template>
-    <div v-if="!simple">
-        <div class="form-group"><label for="name" class="control-label required">Name</label>
-            <input required="required"
-                   @keyup="updateId"
-                   type="text"
-                   id="name"
-                   v-model="templateId"
-                   class="form-control">
+    <div>
+        <div v-if="standalone">
+            <div class="form-group"><label for="name" class="control-label required">Name</label>
+                <input required="required"
+                       @keyup="updateId"
+                       type="text"
+                       id="name"
+                       v-model="templateId"
+                       class="form-control">
+            </div>
+            <div class="form-group"><label for="template_for" class="control-label">Template for</label>
+                <select v-model="templateType"
+                        @change="updateType"
+                        id="template_for" class="form-control">
+                    <option value="basic">Basic template</option>
+                    <option value="coming_up">Coming up</option>
+                    <option value="now">Now</option>
+                    <option value="end">End of compo</option>
+                    <option value="competition_entry_1">Competition (Entry 1)</option>
+                    <option value="competition">Competition</option>
+                    <option value="timetable">Timetable</option>
+                    <option value="participants">Participants</option>
+                    <option value="prizegiving">Prizegiving</option>
+                    <option value="comments">Competition comments</option>
+                </select>
+            </div>
+            <div>
+                <button @click="saveTemplate" class="btn btn-block btn-success btn-sm">Save</button>
+            </div>
+            <hr>
         </div>
-        <div class="form-group"><label for="template_for" class="control-label">Template for</label>
-            <select v-model="templateType"
-                    @change="updateType"
-                    id="template_for" class="form-control">
-                <option value="basic">Basic template</option>
-                <option value="coming_up">Coming up</option>
-                <option value="now">Now</option>
-                <option value="end">End of compo</option>
-                <option value="competition_entry_1">Competition (Entry 1)</option>
-                <option value="competition">Competition</option>
-                <option value="timetable">Timetable</option>
-                <option value="participants">Participants</option>
-                <option value="prizegiving">Prizegiving</option>
-                <option value="comments">Competition comments</option>
-            </select>
-        </div>
-        <div>
-            <button @click="saveTemplate" class="btn btn-block btn-success btn-sm">Save</button>
-        </div>
-        <hr>
-        <h6>Layers</h6>
-        <div class="btn-group btn-block" role="group" aria-label="Basic example">
-            <button @click="addElement" class="btn btn-success btn-sm">Add</button>
-            <button :disabled="activeElement === undefined" @click="cloneElement"
-                    class="btn btn-warning btn-sm">Clone
-            </button>
-            <button :disabled="activeElement === undefined" @click="deleteElement"
-                    class="btn btn-danger btn-sm">Delete
-            </button>
+        <div v-if="!simple">
+            <h6>Layers</h6>
+            <div class="btn-group btn-block" role="group" aria-label="Basic example">
+                <button @click="addElement" class="btn btn-success btn-sm">Add</button>
+                <button :disabled="activeElement === undefined" @click="cloneElement"
+                        class="btn btn-warning btn-sm">Clone
+                </button>
+                <button :disabled="activeElement === undefined" @click="deleteElement"
+                        class="btn btn-danger btn-sm">Delete
+                </button>
+            </div>
         </div>
     </div>
 </template>
 <script>
 
-    import elementNameHelper from "@/mixins/elementNameHelper";
-    import toast from "@/mixins/toast";
+    import elementNameHelper from "../mixins/elementNameHelper";
+    import toast from "../mixins/toast";
 
     export default {
         name: 'partymeister-slides-actions',
-        props: ['activeElement', 'simple'],
+        props: ['activeElement', 'simple', 'standalone'],
         mixins: [elementNameHelper, toast],
         data: () => ({
             templateId: '',

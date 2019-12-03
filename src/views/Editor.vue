@@ -15,16 +15,16 @@
         </div>
         <div class="col-md-2">
           <div class="sidebar">
-            <partymeister-slides-controls :simple="false"></partymeister-slides-controls>
+            <partymeister-slides-controls :standalone="true" :simple="false"></partymeister-slides-controls>
           </div>
         </div>
       </div>
 </template>
 
 <script>
-  import PartymeisterSlidesElements from "@/components/Elements";
-  import PartymeisterSlidesControls from "@/components/Controls";
-  import PartymeisterSlidesDropzone from "@/components/Dropzone";
+  import PartymeisterSlidesElements from "../components/Elements";
+  import PartymeisterSlidesControls from "../components/Controls";
+  import PartymeisterSlidesDropzone from "../components/Dropzone";
 
   export default {
     components: {PartymeisterSlidesDropzone, PartymeisterSlidesElements, PartymeisterSlidesControls}

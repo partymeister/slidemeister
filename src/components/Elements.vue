@@ -44,7 +44,7 @@
     import renderPrizegiving from "../mixins/renderPrizegiving";
     import renderHelper from "../mixins/renderHelper";
     import Vue from 'vue';
-    import elementNameHelper from "@/mixins/elementNameHelper";
+    import elementNameHelper from "../mixins/elementNameHelper";
 
     let slugify = require('slugify');
 

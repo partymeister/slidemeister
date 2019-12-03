@@ -1,6 +1,6 @@
 <template>
     <div>
-        <partymeister-slides-actions :simple="this.simple"
+        <partymeister-slides-actions :standalone="this.standalone" :simple="this.simple"
                                      :active-element="activeElement"></partymeister-slides-actions>
         <hr>
         <partymeister-slides-layers :simple="this.simple" :elements="elements" :element-order="elementOrder"
@@ -12,15 +12,16 @@
 </template>
 <script>
 
-    import PartymeisterSlidesActions from "@/components/Actions";
-    import PartymeisterSlidesLayers from "@/components/Layers";
-    import PartymeisterSlidesProperties from "@/components/Properties";
+    import PartymeisterSlidesActions from "../components/Actions";
+    import PartymeisterSlidesLayers from "../components/Layers";
+    import PartymeisterSlidesProperties from "../components/Properties";
 
     export default {
         name: 'partymeister-slides-controls',
         components: {PartymeisterSlidesProperties, PartymeisterSlidesLayers, PartymeisterSlidesActions},
         props: [
-            'simple'
+            'simple',
+            'standalone'
         ],
         data: () => ({
             elements: {},

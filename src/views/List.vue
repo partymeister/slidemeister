@@ -49,8 +49,8 @@
 </template>
 
 <script>
-    import FileReader from "@/components/FileReader";
-    import PartymeisterSlidesElements from "@/components/Elements";
+    import FileReader from "../components/FileReader";
+    import PartymeisterSlidesElements from "../components/Elements";
 
     let toastr = require('toastr');
     toastr.options = {
@@ -82,7 +82,7 @@
     import * as timetable from '../assets/default-templates/timetable.json';
     import * as entry1 from '../assets/default-templates/competition_entry-1.json';
     import * as entry2n from '../assets/default-templates/competition_entry-2-n.json';
-    import toast from "@/mixins/toast";
+    import toast from "../mixins/toast";
 
     export default {
         name: 'list',
