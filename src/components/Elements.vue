@@ -316,7 +316,13 @@
                 this.addElement('element_' + this.createElementName(), image);
             });
             this.$eventHub.$on('partymeister-slides:image-dropped-from-dataurl', (data) => {
-                this.addElement('element_' + this.createElementName(), '', data.dataUrl);
+                let elementName = this.addElement('element_' + this.createElementName(), '', data.dataUrl);
+
+                // adjust ratio
+                this.elements[elementName].properties.coordinates.width = 200 * data.ratio;
+                this.elements[elementName].properties.coordinates.heightwidth = 200 * data.ratio;
+                this.elements[elementName].properties.content = '';
+                this.updateElementProperties(this.elements[elementName]);
             });
 
             this.$eventHub.$on('partymeister-slides:update-id', (id) => {
@@ -361,6 +367,7 @@
                     this.updateElementOrder(element);
                     this.updateAndSetActive(element, element.name);
                 });
+                return element.name;
             },
             restoreCheckpoint(checkpointData) {
                 if (checkpointData) {
@@ -504,6 +511,9 @@
 
     .hidden {
         display: none;
+    }
+    .medium-editor-element:focus {
+        outline: none !important;
     }
 
     .medium-editor-element p {

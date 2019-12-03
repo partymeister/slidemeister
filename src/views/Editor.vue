@@ -1,5 +1,6 @@
 <template>
       <div class="row content">
+        <partymeister-slides-dropzone></partymeister-slides-dropzone>
         <div class="col-md-10">
           <div id="slidemeister-wrapper">
             <div id="slidemeister-canvas">
@@ -8,7 +9,6 @@
               <div id="slidemeister">
                 <partymeister-slides-elements :load-template="$route.params.template" id="template-editor"
                                               :name="'template-editor'"></partymeister-slides-elements>
-                <partymeister-slides-dropzone></partymeister-slides-dropzone>
               </div>
             </div>
           </div>
@@ -18,7 +18,6 @@
             <partymeister-slides-controls :simple="false"></partymeister-slides-controls>
           </div>
         </div>
-        {{$route.params.template}}
       </div>
 </template>
 
