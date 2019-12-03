@@ -182,7 +182,7 @@
 
                     button.setAttribute("href", data);
 
-                    button.setAttribute("download", "slide-template-definitions.json");
+                    button.setAttribute("download", "slide-template-definitions_" + this.templateId + ".json");
                     button.click();
                 }
             });

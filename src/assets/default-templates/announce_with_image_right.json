@@ -1,0 +1,245 @@
+{
+  "id": "announce_with_image_right",
+  "elements": {
+  "element_24933353": {
+    "name": "element_24933353",
+    "moveable": {
+      "origin": false,
+      "scalable": false,
+      "warpable": false,
+      "draggable": false,
+      "keepRatio": false,
+      "pinchable": false,
+      "resizable": false,
+      "rotatable": false,
+      "snappable": true,
+      "throttleDrag": 0,
+      "snapThreshold": 10,
+      "throttleScale": 0,
+      "throttleResize": 1,
+      "throttleRotate": 0,
+      "elementGuidelines": [
+        {},
+        {
+          "_prevClass": "snappable-shadow shadow-element_33373619"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_53391992"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_61979639"
+        }
+      ]
+    },
+    "properties": {
+      "size": "individual",
+      "color": "#000000",
+      "locked": true,
+      "zIndex": 1998,
+      "content": "<p><br></p>",
+      "opacity": 1,
+      "editable": true,
+      "fontSize": 30,
+      "snapping": true,
+      "warpable": false,
+      "fontStyle": "normal",
+      "resizable": true,
+      "textAlign": "left",
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+      "prettyname": "background",
+      "visibility": "render",
+      "coordinates": {
+        "width": 962,
+        "height": 541,
+        "transform": "matrix(1, 0, 0, 1, -1, 339) translate(0px, -340px)"
+      },
+      "placeholder": "",
+      "verticalAlign": "flex-start",
+      "backgroundColor": "#efefef",
+      "horizontalAlign": "flex-start",
+      "calculatedFontSize": "31px"
+    }
+  },
+  "element_33373619": {
+    "name": "element_33373619",
+    "moveable": {
+      "origin": false,
+      "scalable": false,
+      "warpable": false,
+      "draggable": false,
+      "keepRatio": false,
+      "pinchable": false,
+      "resizable": false,
+      "rotatable": false,
+      "snappable": true,
+      "throttleDrag": 0,
+      "snapThreshold": 10,
+      "throttleScale": 0,
+      "throttleResize": 1,
+      "throttleRotate": 0,
+      "elementGuidelines": [
+        {},
+        {
+          "_prevClass": "snappable-shadow shadow-element_24933353"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_53391992"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_61979639"
+        }
+      ]
+    },
+    "properties": {
+      "size": "individual",
+      "color": "#FFFFFF",
+      "locked": true,
+      "zIndex": 2000,
+      "content": "<p>THIS IS A HEADLINE</p>",
+      "opacity": 1,
+      "editable": true,
+      "fontSize": 30,
+      "snapping": true,
+      "warpable": false,
+      "fontStyle": "normal",
+      "resizable": true,
+      "textAlign": "left",
+      "fontFamily": "'Exo 2'",
+      "fontWeight": "normal",
+      "prettyname": "headline",
+      "visibility": "render",
+      "coordinates": {
+        "width": 899,
+        "height": 55,
+        "transform": "matrix(1, 0, 0, 1, 19, -1) translate(10px, 15px)"
+      },
+      "placeholder": "Timetable <<day>>",
+      "verticalAlign": "center",
+      "backgroundColor": "transparent",
+      "horizontalAlign": "flex-start",
+      "calculatedFontSize": "31px"
+    }
+  },
+  "element_53391992": {
+    "name": "element_53391992",
+    "moveable": {
+      "origin": false,
+      "scalable": false,
+      "warpable": false,
+      "draggable": false,
+      "keepRatio": false,
+      "pinchable": false,
+      "resizable": false,
+      "rotatable": false,
+      "snappable": true,
+      "throttleDrag": 0,
+      "snapThreshold": 10,
+      "throttleScale": 0,
+      "throttleResize": 1,
+      "throttleRotate": 0,
+      "elementGuidelines": [
+        {},
+        {
+          "_prevClass": "snappable-shadow shadow-element_24933353"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_33373619"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_61979639"
+        }
+      ]
+    },
+    "properties": {
+      "size": "individual",
+      "color": "#000000",
+      "locked": true,
+      "zIndex": 1999,
+      "content": "<p><br></p>",
+      "opacity": 1,
+      "editable": true,
+      "fontSize": 30,
+      "snapping": true,
+      "warpable": false,
+      "fontStyle": "normal",
+      "resizable": true,
+      "textAlign": "left",
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+      "prettyname": "panel",
+      "visibility": "render",
+      "coordinates": {
+        "width": 962,
+        "height": 87,
+        "transform": "matrix(1, 0, 0, 1, 0, 0) translate(-3px, -1px)"
+      },
+      "placeholder": "",
+      "verticalAlign": "flex-start",
+      "backgroundColor": "rgba(68, 122, 194, 1)",
+      "horizontalAlign": "flex-start",
+      "calculatedFontSize": "31px"
+    }
+  },
+  "element_61979639": {
+    "name": "element_61979639",
+    "moveable": {
+      "origin": false,
+      "scalable": false,
+      "warpable": false,
+      "draggable": false,
+      "keepRatio": false,
+      "pinchable": false,
+      "resizable": false,
+      "rotatable": false,
+      "snappable": true,
+      "throttleDrag": 0,
+      "snapThreshold": 10,
+      "throttleScale": 0,
+      "throttleResize": 1,
+      "throttleRotate": 0,
+      "elementGuidelines": [
+        {},
+        {
+          "_prevClass": "snappable-shadow shadow-element_24933353"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_33373619"
+        },
+        {
+          "_prevClass": "snappable-shadow shadow-element_53391992"
+        }
+      ]
+    },
+    "properties": {
+      "size": "individual",
+      "color": "#000000",
+      "locked": true,
+      "zIndex": 2006,
+      "content": "<p>Jeremy Corbyn would take a “neutral stance” in a future Brexit referendum, he has announced, after facing mounting pressure in recent days to pick a side.</p><p><br></p><p>Appearing in a special BBC Question Time programme, in which Boris Johnson was attacked over racism and Jo Swinson found herself on the back foot over Brexit, Corbyn confirmed for the first time he would not campaign either for leave or remain.</p>",
+      "opacity": 1,
+      "editable": true,
+      "fontSize": "24",
+      "snapping": true,
+      "warpable": false,
+      "fontStyle": "normal",
+      "resizable": true,
+      "textAlign": "left",
+      "fontFamily": "'Exo 2'",
+      "fontWeight": "normal",
+      "prettyname": "body",
+      "visibility": "render",
+      "coordinates": {
+        "width": 591,
+        "height": 404,
+        "transform": "matrix(1, 0, 0, 1, 321, 109) translate(-292px, -1px)"
+      },
+      "placeholder": "",
+      "verticalAlign": "flex-start",
+      "backgroundColor": "transparent",
+      "horizontalAlign": "flex-start",
+      "calculatedFontSize": "24px"
+    }
+  }
+}
+}

@@ -64,7 +64,20 @@
         "hideEasing": "linear",
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
-    }
+    };
+
+    import * as comingUp from '../assets/default-templates/coming_up.json';
+    import * as now from '../assets/default-templates/now.json';
+    import * as end from '../assets/default-templates/end.json';
+    import * as announce from '../assets/default-templates/announce.json';
+    import * as announceRight from '../assets/default-templates/announce_with_image_right.json';
+    import * as comments from '../assets/default-templates/comments.json';
+    import * as participants from '../assets/default-templates/participants.json';
+    import * as prizegiving from '../assets/default-templates/prizegiving.json';
+    import * as timetable from '../assets/default-templates/timetable.json';
+    import * as entry1 from '../assets/default-templates/competition_entry-1.json';
+    import * as entry2n from '../assets/default-templates/competition_entry-2-n.json';
+
     export default {
         name: 'list',
         components: {FileReader, PartymeisterSlidesElements},
@@ -76,6 +89,20 @@
             templates = JSON.parse(templates);
             if (templates !== null && templates.length > 0) {
                 this.templates = templates;
+            } else {
+                // Load default templates
+                this.templates.push(comingUp.default);
+                this.templates.push(now.default);
+                this.templates.push(end.default);
+                this.templates.push(announce.default);
+                this.templates.push(announceRight.default);
+                this.templates.push(comments.default);
+                this.templates.push(participants.default);
+                this.templates.push(prizegiving.default);
+                this.templates.push(timetable.default);
+                this.templates.push(entry1.default);
+                this.templates.push(entry2n.default);
+                localStorage.setItem('templates', JSON.stringify(this.templates));
             }
             this.$eventHub.$on('partymeister-slides:file-loaded', (data) => {
                 let template = JSON.parse(data);
@@ -153,5 +180,7 @@
     .col-md-2 {
         height: calc(100vh - 50px);
         background-color: #efefef;
+        position: fixed;
+        right: 0;
     }
 </style>

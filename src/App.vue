@@ -46,6 +46,19 @@
 </script>
 
 <style lang="scss">
+    // Your variable overrides
+
+    $blue:       #20a8d8 !default;
+    $indigo:     #6610f2 !default;
+    $purple:     #6f42c1 !default;
+    $pink:       #e83e8c !default;
+    $red:        #f86c6b !default;
+    $orange:     #f8cb00 !default;
+    $yellow:     #ffc107 !default;
+    $green:      #4dbd74 !default;
+    $teal:       #20c997 !default;
+    $cyan:       #17a2b8 !default;
+
     @import '~bootstrap';
     @import "~medium-editor/dist/css/medium-editor";
     @import "~medium-editor/dist/css/themes/beagle";
@@ -67,8 +80,9 @@
     }
 
     .header {
+        background-color: white;
         position: fixed;
-        z-index: 1020;
+        z-index: 12200;
         width: 100%;
         height: 50px;
         border-bottom: 1px solid #c8ced3;

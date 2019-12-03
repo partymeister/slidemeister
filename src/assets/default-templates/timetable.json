@@ -1,0 +1,401 @@
+{
+  "id": "timetable",
+  "elements": {
+    "element_24933353": {
+      "name": "element_24933353",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_53391992"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_61979639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_80264621"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_91653817"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 1998,
+        "content": "<p><br></p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "Arial",
+        "fontWeight": "normal",
+        "prettyname": "background",
+        "visibility": "render",
+        "coordinates": {
+          "width": 962,
+          "height": 541,
+          "transform": "matrix(1, 0, 0, 1, -1, 339) translate(0px, -340px)"
+        },
+        "placeholder": "",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "#efefef",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_33373619": {
+      "name": "element_33373619",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_53391992"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_61979639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_80264621"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_91653817"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2000,
+        "content": "<p>Timetable</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "headline",
+        "visibility": "render",
+        "coordinates": {
+          "width": 899,
+          "height": 55,
+          "transform": "matrix(1, 0, 0, 1, 19, -1) translate(10px, 15px)"
+        },
+        "placeholder": "Timetable <<headline>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_53391992": {
+      "name": "element_53391992",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_61979639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_80264621"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_91653817"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 1999,
+        "content": "<p><br></p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "Arial",
+        "fontWeight": "normal",
+        "prettyname": "panel",
+        "visibility": "render",
+        "coordinates": {
+          "width": 962,
+          "height": 87,
+          "transform": "matrix(1, 0, 0, 1, 0, 0) translate(-3px, -1px)"
+        },
+        "placeholder": "",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "rgba(68, 122, 194, 1)",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_61979639": {
+      "name": "element_61979639",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_53391992"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_80264621"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_91653817"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 2006,
+        "content": "<p>Amiga Demo Competition</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "24",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "timetable_event_name",
+        "visibility": "render",
+        "coordinates": {
+          "width": 606,
+          "height": 43,
+          "transform": "matrix(1, 0, 0, 1, 132, 109) translate(189px, 0px)"
+        },
+        "placeholder": "<<name>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "25px"
+      }
+    },
+    "element_80264621": {
+      "name": "element_80264621",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_53391992"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_61979639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_91653817"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 2005,
+        "content": "<p>Competition</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "24",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "timetable_event_type",
+        "visibility": "render",
+        "coordinates": {
+          "width": 176,
+          "height": 43,
+          "transform": "matrix(1, 0, 0, 1, 29, 109) translate(103px, 0px)"
+        },
+        "placeholder": "<<type>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "25px"
+      }
+    },
+    "element_91653817": {
+      "name": "element_91653817",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_53391992"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_61979639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_80264621"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 2003,
+        "content": "<p>11:00</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "24",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "timetable_time",
+        "visibility": "render",
+        "coordinates": {
+          "width": 89,
+          "height": 43,
+          "transform": "matrix(1, 0, 0, 1, 0, 0) translate(29px, 109px)"
+        },
+        "placeholder": "<<time>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "25px"
+      }
+    }
+  }
+}

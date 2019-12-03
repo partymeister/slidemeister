@@ -38,6 +38,11 @@
 
 
 </style>
+<style lang="scss">
+  .list-group-item {
+    padding: 0.25rem 1.25rem;
+  }
+</style>
 <style scoped lang="scss">
   #slidemeister-wrapper {
     display: flex;

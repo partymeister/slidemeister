@@ -1,0 +1,680 @@
+{
+  "id": "competition_entry_1",
+  "elements": {
+    "element_2145694": {
+      "name": "element_2145694",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 1999,
+        "content": "<p><b>05</b></p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "110",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "right",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "position",
+        "visibility": "render",
+        "coordinates": {
+          "width": 141,
+          "height": 210,
+          "transform": "matrix(1, 0, 0, 1, 32, 48) translate(1px, 0px)"
+        },
+        "placeholder": "<<sort_position_prefixed>>",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "111px"
+      }
+    },
+    "element_13135619": {
+      "name": "element_13135619",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2006,
+        "content": "<p>by extreme long group name</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "24",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "title",
+        "visibility": "render",
+        "coordinates": {
+          "width": 597,
+          "height": 41,
+          "transform": "matrix(1, 0, 0, 1, 334, 84) translate(0px, 56px)"
+        },
+        "placeholder": "<<author>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "25px"
+      }
+    },
+    "element_24933353": {
+      "name": "element_24933353",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 1995,
+        "content": "<p><br></p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "Arial",
+        "fontWeight": "normal",
+        "prettyname": "background",
+        "visibility": "render",
+        "coordinates": {
+          "width": 962,
+          "height": 541,
+          "transform": "matrix(1, 0, 0, 1, -1, 339) translate(0px, -340px)"
+        },
+        "placeholder": "",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "#efefef",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_33373619": {
+      "name": "element_33373619",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 1998,
+        "content": "<p>CURRENT COMPO: 4K EXECUTABLE GRAPHICS</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "competition",
+        "visibility": "render",
+        "coordinates": {
+          "width": 899,
+          "height": 72,
+          "transform": "matrix(1, 0, 0, 1, 33, 8) translate(-1px, -9px)"
+        },
+        "placeholder": "<<competition_name>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_63970736": {
+      "name": "element_63970736",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2007,
+        "content": "<p>This is a very useful and informative comment by the authors of the demo. They want you to read it.</p><p><br></p><p>Read it!</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "16",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "title",
+        "visibility": "render",
+        "coordinates": {
+          "width": 597,
+          "height": 175,
+          "transform": "matrix(1, 0, 0, 1, 334, 181) translate(0px, 13px)"
+        },
+        "placeholder": "<<description>>",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "17px"
+      }
+    },
+    "element_75401639": {
+      "name": "element_75401639",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2000,
+        "content": "<p>one long entry name, biatch</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "36",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "bold",
+        "prettyname": "title",
+        "visibility": "render",
+        "coordinates": {
+          "width": 597,
+          "height": 56,
+          "transform": "matrix(1, 0, 0, 1, 373, 86) translate(-39px, -2px)"
+        },
+        "placeholder": "<<title>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "37px"
+      }
+    },
+    "element_89195201": {
+      "name": "element_89195201",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2011,
+        "content": "<p>4KB C64</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "16",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "filesize and platform",
+        "visibility": "render",
+        "coordinates": {
+          "width": 149,
+          "height": 33,
+          "transform": "matrix(1, 0, 0, 1, 163, 194) translate(11px, 0px)"
+        },
+        "placeholder": "<<filesize_human>> <<platform>>",
+        "verticalAlign": "center",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "17px"
+      }
+    },
+    "element_94769562": {
+      "name": "element_94769562",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_96424802"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#000000",
+        "locked": true,
+        "zIndex": 1996,
+        "content": "<p><br></p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": 30,
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "Arial",
+        "fontWeight": "normal",
+        "prettyname": "panel",
+        "visibility": "render",
+        "coordinates": {
+          "width": 963,
+          "height": 408,
+          "transform": "matrix(1, 0, 0, 1, -2, 72) translate(0px, -1px)"
+        },
+        "placeholder": "",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "rgba(68, 122, 194, 1)",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "31px"
+      }
+    },
+    "element_96424802": {
+      "name": "element_96424802",
+      "moveable": {
+        "origin": false,
+        "scalable": false,
+        "warpable": false,
+        "draggable": false,
+        "keepRatio": false,
+        "pinchable": false,
+        "resizable": false,
+        "rotatable": false,
+        "snappable": true,
+        "throttleDrag": 0,
+        "snapThreshold": 10,
+        "throttleScale": 0,
+        "throttleResize": 1,
+        "throttleRotate": 0,
+        "elementGuidelines": [
+          {},
+          {
+            "_prevClass": "snappable-shadow shadow-element_2145694"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_13135619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_24933353"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_33373619"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_63970736"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_75401639"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_89195201"
+          },
+          {
+            "_prevClass": "snappable-shadow shadow-element_94769562"
+          }
+        ]
+      },
+      "properties": {
+        "size": "individual",
+        "color": "#FFFFFF",
+        "locked": true,
+        "zIndex": 2012,
+        "content": "<p>Option 1, Option 2, Option 3, Option 4</p>",
+        "opacity": 1,
+        "editable": true,
+        "fontSize": "16",
+        "snapping": true,
+        "warpable": false,
+        "fontStyle": "normal",
+        "resizable": true,
+        "textAlign": "left",
+        "fontFamily": "'Exo 2'",
+        "fontWeight": "normal",
+        "prettyname": "options",
+        "visibility": "render",
+        "coordinates": {
+          "width": 149,
+          "height": 117,
+          "transform": "matrix(1, 0, 0, 1, 174, 194) translate(0px, 33px)"
+        },
+        "placeholder": "<<option_1>> <<option_2>> <<option_3>> <<custom_option>>",
+        "verticalAlign": "flex-start",
+        "backgroundColor": "transparent",
+        "horizontalAlign": "flex-start",
+        "calculatedFontSize": "17px"
+      }
+    }
+  }
+}
