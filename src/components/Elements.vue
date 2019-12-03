@@ -45,6 +45,8 @@
     import renderHelper from "../mixins/renderHelper";
     import Vue from 'vue';
 
+    let slugify = require('slugify');
+
     export default {
         name: 'partymeister-slides-elements',
         props: ['name', 'readonly', 'elementData', 'loadTemplate'],
@@ -64,6 +66,7 @@
         ],
         data: () => ({
             templateId: '',
+            templateType: 'basic',
             elements: {},
             elementOrder: [],
             key: undefined,
@@ -103,6 +106,7 @@
                 }
                 Vue.set(this, 'elements', data.elements.elements);
                 Vue.set(this, 'templateId', data.elements.id);
+                Vue.set(this, 'templateType', data.elements.type);
                 Vue.set(this, 'elementOrder', []);
 
 
@@ -182,7 +186,7 @@
 
                     button.setAttribute("href", data);
 
-                    button.setAttribute("download", "slide-template-definitions_" + this.templateId + ".json");
+                    button.setAttribute("download", "slide-template-definitions_" + slugify(this.templateId) + ".json");
                     button.click();
                 }
             });
@@ -205,6 +209,7 @@
 
                 let definitions = JSON.stringify({
                     id: this.templateId,
+                    type: this.templateType,
                     elements: this.elements,
                 });
 
@@ -312,8 +317,21 @@
                 this.addElement('element_' + Math.floor((Math.random() * 100000000) + 1), '', data.dataUrl);
             });
 
+            this.$eventHub.$on('partymeister-slides:update-id', (id) => {
+                this.templateId = id;
+                this.emitAllElements();
+            });
+
+            this.$eventHub.$on('partymeister-slides:update-type', (type) => {
+                this.templateType = type;
+                this.emitAllElements();
+            });
+
             if (this.elementData) {
-                this.$eventHub.$emit('partymeister-slides:load-definitions', {name: this.name, elements: JSON.parse(JSON.stringify(this.elementData))})
+                this.$eventHub.$emit('partymeister-slides:load-definitions', {
+                    name: this.name,
+                    elements: JSON.parse(JSON.stringify(this.elementData))
+                })
                 this.showOverlay = true;
             }
 
@@ -321,7 +339,10 @@
                 let templates = localStorage.getItem('templates');
                 templates = JSON.parse(templates);
                 if (templates[this.loadTemplate] !== undefined) {
-                    this.$eventHub.$emit('partymeister-slides:load-definitions', {name: this.name, elements: JSON.parse(JSON.stringify(templates[this.loadTemplate]))})
+                    this.$eventHub.$emit('partymeister-slides:load-definitions', {
+                        name: this.name,
+                        elements: JSON.parse(JSON.stringify(templates[this.loadTemplate]))
+                    })
                 }
             }
         },
@@ -360,7 +381,9 @@
             emitAllElements() {
                 this.$eventHub.$emit('partymeister-slides:all-elements', {
                     elements: this.elements,
-                    order: this.elementOrder
+                    order: this.elementOrder,
+                    id: this.templateId,
+                    type: this.templateType,
                 });
             },
             deleteElementFromElementOrder(name) {

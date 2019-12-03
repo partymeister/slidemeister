@@ -11,6 +11,12 @@
                                                       :name="'template-editor-'+index">
 
                         </partymeister-slides-elements>
+                        <div :id="'data-overlay-'+index" class="data-overlay invisible">
+                            <p>
+                                Name: {{template.id}}<br>
+                                Type: {{template.type}}
+                            </p>
+                        </div>
                         <div :id="'button-group-'+index" class="btn-group invisible" role="group"
                              aria-label="Basic example">
                             <button @click="exportTemplate($event, index)" type="button" class="btn btn-sm btn-primary">
@@ -141,9 +147,11 @@
             },
             onMouseOver($event, index) {
                 document.querySelector('#button-group-' + index).classList.remove('invisible');
+                document.querySelector('#data-overlay-' + index).classList.remove('invisible');
             },
             onMouseOut($event, index) {
                 document.querySelector('#button-group-' + index).classList.add('invisible');
+                document.querySelector('#data-overlay-' + index).classList.add('invisible');
             },
         }
     }
@@ -151,6 +159,17 @@
 <style lang="scss" scoped>
     .template-wrapper {
         height: calc(540px * 0.3);
+    }
+    .data-overlay {
+        text-align: center;
+        z-index: 12001;
+        position: absolute;
+        top: 55px;
+        border: 1px solid black;
+        background: white;
+        opacity: 0.9;
+        width: calc(960px * 0.3);
+        height: calc(180px * 0.3);
     }
 
     .content .row {
