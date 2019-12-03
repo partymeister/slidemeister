@@ -3,11 +3,13 @@
         <div class="container-fluid">
             <div class="row header-row">
                 <div class="col-md-12 header">
-                    <img class="logo" src="./assets/pm-logo-small.png">
-                    <h1>
-                        Partymeister Slide-Template Editor
-                    </h1>
-                    <button v-if="canGoBack" @click="navigateToList" class="btn btn-sm btn-danger ">Back</button>
+                    <div class="d-flex justify-content-center">
+                        <img class="logo" src="./assets/pm-logo-small.png">
+                        <h1>
+                            Partymeister Slide-Template Editor
+                        </h1>
+                    </div>
+                    <button v-if="canGoBack" @click="navigateToList" class="btn btn-sm btn-danger d-flex justify-content-end">Back</button>
                 </div>
             </div>
             <router-view/>
@@ -66,11 +68,15 @@
 
     .header-row {
         height: 50px;
+        -webkit-app-region: drag
     }
 
     .header-row button {
-        float: right;
+        position: absolute;
+        top: 0;
+        right: 15px;
         margin-top: 10px;
+        -webkit-app-region: no-drag;
     }
 
     .logo {

@@ -19,10 +19,13 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true
         },
+        minWidth: 1200,
+        minHeight: 800,
         width: 1200,
         height: 800,
+        titleBarStyle: 'hiddenInset',
         icon: path.join('icon.png')
-    })
+    });
 
     if (process.env.WEBPACK_DEV_SERVER_URL) {
         // Load the url of the dev server if in development mode
