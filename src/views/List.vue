@@ -25,6 +25,9 @@
                             <button @click="editTemplate($event, index)" type="button" class="btn btn-sm btn-primary">
                                 Edit
                             </button>
+                            <button @click="duplicateTemplate($event, index)" type="button" class="btn btn-sm btn-primary">
+                                Duplicate
+                            </button>
                             <button @click="deleteTemplate($event, index)" type="button" class="btn btn-sm btn-danger">
                                 Delete
                             </button>
@@ -51,6 +54,7 @@
 <script>
     import FileReader from "../components/FileReader";
     import PartymeisterSlidesElements from "../components/Elements";
+    import elementNameHelper from "@/mixins/elementNameHelper";
 
     let toastr = require('toastr');
     toastr.options = {
@@ -88,7 +92,8 @@
         name: 'list',
         components: {FileReader, PartymeisterSlidesElements},
         mixins: [
-            toast
+            toast,
+            elementNameHelper
         ],
         data: () => ({
             templates: [],
@@ -120,6 +125,13 @@
             });
         },
         methods: {
+            duplicateTemplate($event, index) {
+                let template = JSON.parse(JSON.stringify(this.templates[index]));
+                template.id = this.createElementName();
+                this.templates.push(template);
+                localStorage.setItem('templates', JSON.stringify(this.templates));
+                this.toast('Template duplicated');
+            },
             exportTemplate($event, index) {
                 this.$eventHub.$emit('partymeister-slides:download-definitions', 'template-editor-' + index);
                 $event.preventDefault();
@@ -129,7 +141,6 @@
             },
             editTemplate($event, index) {
                 this.$router.push({name: 'edit', params: {template: index}})
-
                 $event.preventDefault();
             },
             deleteTemplate($event, index) {
